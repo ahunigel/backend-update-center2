@@ -130,7 +130,9 @@ public class Main {
     public static final String EOL = System.getProperty("line.separator");
 
     public static void main(String[] args) throws Exception {
-        System.exit(new Main().run(args));
+        if (1 == new Main().run(args)) {
+            throw new RuntimeException("CmdLine exit with exceptions");
+        }
     }
 
     public int run(String[] args) throws Exception {
